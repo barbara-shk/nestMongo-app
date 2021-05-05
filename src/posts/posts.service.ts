@@ -24,10 +24,10 @@ export class PostsService {
   }
 
   update(id: string, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
+    return this.postModel.findByIdAndUpdate(id, updatePostDto, {new: true});
   }
 
   remove(id: string) {
-    return `This action removes a #${id} post`;
+    return this.postModel.findByIdAndRemove(id);
   }
 }
